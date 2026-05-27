@@ -22,48 +22,94 @@ class JobsTrips
                     ]
                 ),
                 new Column(
-                    'first_name',
+                    'employee_id',
                     [
-                        'type'          => Column::TYPE_VARCHAR,
-                        'size'          => 50,
+                        'type'          => Column::TYPE_SMALLINTEGER,
                         'notNull'       => true,
                     ]
                 ),
                 new Column(
-                    'last_name',
+                    'start_date',
                     [
                         'type'          => Column::TYPE_VARCHAR,
-                        'size'          => 50,
+                        'size'          => 20,
                         'notNull'       => true,
                     ]
-                )
-            ],
-            'indexes' => [
-                new Index(
-                    'column_UNIQUE',
+                ),
+                new Column(
+                    'end_date',
                     [
-                        'last_name'
-                    ],
-                    'UNIQUE'
-                )
-            ],
-            'options' => [
-                'TABLE_COLLATION' => 'utf8mb4_general_ci'
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 20,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'start_location_id',
+                    [
+                        'type'          => Column::TYPE_SMALLINTEGER,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'load_location_id',
+                    [
+                        'type'          => Column::TYPE_SMALLINTEGER,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'unload_location_id',
+                    [
+                        'type'          => Column::TYPE_SMALLINTEGER,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'end_location_id',
+                    [
+                        'type'          => Column::TYPE_SMALLINTEGER,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'status',
+                    [
+                        'type'          => Column::TYPE_TINYINTEGER,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'archived',
+                    [
+                        'type'          => Column::TYPE_BOOLEAN,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'dev_notes',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 2048,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'documents',
+                    [
+                        'type'          => Column::TYPE_JSON,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'notes',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 2048,
+                        'notNull'       => false,
+                    ]
+                ),
             ]
-        ];
-    }
-
-    public function indexes()
-    {
-        return
-        [
-            new Index(
-                'column_INDEX',
-                [
-                    'first_name'
-                ],
-                'INDEX'
-            )
         ];
     }
 }
