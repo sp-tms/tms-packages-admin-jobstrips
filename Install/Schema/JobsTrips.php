@@ -22,68 +22,135 @@ class JobsTrips
                     ]
                 ),
                 new Column(
-                    'employee_id',
+                    'employee_ids',
                     [
-                        'type'          => Column::TYPE_SMALLINTEGER,
-                        'notNull'       => true,
+                        'type'          => Column::TYPE_JSON,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
-                    'start_date',
+                    'route',
                     [
-                        'type'          => Column::TYPE_VARCHAR,
-                        'size'          => 20,
-                        'notNull'       => true,
+                        'type'          => Column::TYPE_JSON,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
-                    'end_date',
+                    'start_odo_reading',
                     [
-                        'type'          => Column::TYPE_VARCHAR,
-                        'size'          => 20,
-                        'notNull'       => true,
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
-                    'start_location_id',
+                    'load_odo_reading',
                     [
-                        'type'          => Column::TYPE_SMALLINTEGER,
-                        'notNull'       => true,
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
                     'load_location_id',
                     [
-                        'type'          => Column::TYPE_SMALLINTEGER,
+                        'type'          => Column::TYPE_INTEGER,
                         'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'load_location_in_time',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 30,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'load_location_out_time',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 30,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'load_quantity',
+                    [
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'load_notes',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 2048,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
                     'unload_location_id',
                     [
-                        'type'          => Column::TYPE_SMALLINTEGER,
+                        'type'          => Column::TYPE_INTEGER,
                         'notNull'       => true,
                     ]
                 ),
                 new Column(
-                    'end_location_id',
+                    'unload_location_in_time',
                     [
-                        'type'          => Column::TYPE_SMALLINTEGER,
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 30,
                         'notNull'       => true,
                     ]
                 ),
                 new Column(
-                    'status',
+                    'unload_location_out_time',
                     [
-                        'type'          => Column::TYPE_TINYINTEGER,
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 30,
                         'notNull'       => true,
                     ]
                 ),
                 new Column(
-                    'archived',
+                    'unload_odo_reading',
                     [
-                        'type'          => Column::TYPE_BOOLEAN,
-                        'notNull'       => true,
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'unload_notes',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 2048,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'unload_quantity',
+                    [
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'wastage',
+                    [
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'end_odo_reading',
+                    [
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'fuel_refill_odo_reading',
+                    [
+                        'type'          => Column::TYPE_FLOAT,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -95,14 +162,7 @@ class JobsTrips
                     ]
                 ),
                 new Column(
-                    'documents',
-                    [
-                        'type'          => Column::TYPE_JSON,
-                        'notNull'       => false,
-                    ]
-                ),
-                new Column(
-                    'notes',
+                    'trip_notes',
                     [
                         'type'          => Column::TYPE_VARCHAR,
                         'size'          => 2048,
