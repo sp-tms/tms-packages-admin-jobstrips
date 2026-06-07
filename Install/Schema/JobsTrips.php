@@ -22,9 +22,32 @@ class JobsTrips
                     ]
                 ),
                 new Column(
-                    'employee_ids',
+                    'voucher_no',
                     [
-                        'type'          => Column::TYPE_JSON,
+                        'type'          => Column::TYPE_INTEGER,
+                        'notNull'       => true,
+                    ]
+                ),
+                new Column(
+                    'employee_id',
+                    [
+                        'type'          => Column::TYPE_INTEGER,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'from_date',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 50,
+                        'notNull'       => false,
+                    ]
+                ),
+                new Column(
+                    'to_date',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 50,
                         'notNull'       => false,
                     ]
                 ),
@@ -53,7 +76,7 @@ class JobsTrips
                     'load_location_id',
                     [
                         'type'          => Column::TYPE_INTEGER,
-                        'notNull'       => true,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -61,7 +84,7 @@ class JobsTrips
                     [
                         'type'          => Column::TYPE_VARCHAR,
                         'size'          => 30,
-                        'notNull'       => true,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -69,7 +92,7 @@ class JobsTrips
                     [
                         'type'          => Column::TYPE_VARCHAR,
                         'size'          => 30,
-                        'notNull'       => true,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -91,7 +114,7 @@ class JobsTrips
                     'unload_location_id',
                     [
                         'type'          => Column::TYPE_INTEGER,
-                        'notNull'       => true,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -99,7 +122,7 @@ class JobsTrips
                     [
                         'type'          => Column::TYPE_VARCHAR,
                         'size'          => 30,
-                        'notNull'       => true,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -107,7 +130,7 @@ class JobsTrips
                     [
                         'type'          => Column::TYPE_VARCHAR,
                         'size'          => 30,
-                        'notNull'       => true,
+                        'notNull'       => false,
                     ]
                 ),
                 new Column(
@@ -141,13 +164,6 @@ class JobsTrips
                 ),
                 new Column(
                     'end_odo_reading',
-                    [
-                        'type'          => Column::TYPE_FLOAT,
-                        'notNull'       => false,
-                    ]
-                ),
-                new Column(
-                    'fuel_refill_odo_reading',
                     [
                         'type'          => Column::TYPE_FLOAT,
                         'notNull'       => false,

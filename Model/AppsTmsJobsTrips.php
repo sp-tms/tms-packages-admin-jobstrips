@@ -8,7 +8,13 @@ class AppsTmsJobsTrips extends BaseModel
 {
     public $id;
 
-    public $employee_ids;
+    public $voucher_no;
+
+    public $employee_id;
+
+    public $from_date;
+
+    public $to_date;
 
     public $route;
 
@@ -41,8 +47,6 @@ class AppsTmsJobsTrips extends BaseModel
     public $wastage;
 
     public $end_odo_reading;
-
-    public $fuel_refill_odo_reading;
 
     public $dev_notes;
 
