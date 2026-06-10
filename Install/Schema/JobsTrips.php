@@ -25,6 +25,15 @@ class JobsTrips
                     'voucher_no',
                     [
                         'type'          => Column::TYPE_INTEGER,
+                        'notNull'       => false,
+                    ]
+                ),
+                //Needed with voucher no : 1/26-27 is the whole voucher number
+                new Column(
+                    'financial_year',
+                    [
+                        'type'          => Column::TYPE_VARCHAR,
+                        'size'          => 10,
                         'notNull'       => true,
                     ]
                 ),

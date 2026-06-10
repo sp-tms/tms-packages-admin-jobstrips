@@ -10,6 +10,8 @@ class AppsTmsJobsTrips extends BaseModel
 
     public $voucher_no;
 
+    public $financial_year;
+
     public $employee_id;
 
     public $from_date;
